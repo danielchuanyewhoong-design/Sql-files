@@ -1,0 +1,8 @@
+/*Region that >1000*/
+SELECT 
+    c.region,
+    SUM(o.quantity * o.unit_price) AS total_revenue
+FROM orders o
+JOIN customers c ON o.customer_id = c.customer_id
+GROUP BY c.region
+HAVING SUM(o.quantity * o.unit_price) > 1000;
