@@ -1,0 +1,13 @@
+/*Order Size*/
+
+SELECT 
+    order_id, 
+    customer_id, 
+    (quantity * unit_price) AS Total_Order, 
+    CASE 
+        WHEN (quantity * unit_price) <= 50 THEN 'Small'
+        WHEN (quantity * unit_price) BETWEEN 50 AND 200 THEN 'Medium'
+        ELSE 'Large'
+    END AS order_size 
+FROM orders 
+ORDER BY Total_Order ASC;
