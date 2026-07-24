@@ -1,0 +1,15 @@
+/*Revenue for Each Region*/
+
+SELECT
+c.region,
+SUM(o.quantity*o.unit_price) AS Total_Revenue
+
+FROM
+orders o
+
+JOIN
+customers c ON o.customer_id =c.customer_id
+
+GROUP BY c.region
+
+order BY Total_Revenue
