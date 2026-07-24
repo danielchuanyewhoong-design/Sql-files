@@ -1,0 +1,16 @@
+/*Top 5 Customer List */
+
+SELECT
+c.customer_name,
+SUM(o.quantity*o.unit_price) AS Total_Spend 
+
+FROM
+orders o
+
+JOIN
+customers c ON o.customer_id = c.customer_id
+
+GROUP BY c.customer_name
+
+ORDER BY Total_Spend DESC 
+LIMIT 5
