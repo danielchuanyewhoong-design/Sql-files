@@ -1,4 +1,4 @@
-/*Order Size */
+/*Days Between signup first order */
 
 SELECT
 c.customer_id,
