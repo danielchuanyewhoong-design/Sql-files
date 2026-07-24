@@ -1,0 +1,18 @@
+/*Customer & Region*/
+
+SELECT
+o.customer_id,
+c.customer_name,
+c.region,
+o.order_date,
+o.quantity,
+o.unit_price,
+(o.quantity*o.unit_price) AS Total_Order
+
+FROM
+orders o
+
+JOIN
+customers c ON o.customer_id = c.customer_id
+
+order BY o.customer_id;
